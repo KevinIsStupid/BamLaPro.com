@@ -104,7 +104,7 @@ function run() {
             const dx = partz[a].x - partz[y].x;
             const dy = partz[a].y - partz[y].y;
             const dis = Math.sqrt(dx * dx + dy * dy);
-            if (dis < 50) {
+            if (dis < 50 && dis>5) {
                 ctx.beginPath();
                 ctx.moveTo(partz[y].x, partz[y].y);
                 ctx.strokeStyle = partz[y].color;
@@ -124,7 +124,7 @@ if (check) {
     cvs.addEventListener("mousemove", function(event) {
         mouse.x = event.x;
         mouse.y = event.y;
-        for (var z = 0; z < 5; z++) {
+        for (var z = 0; z < 3; z++) {
             partz.push(new smallOne());
         }
     });
